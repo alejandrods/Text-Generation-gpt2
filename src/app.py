@@ -23,7 +23,7 @@ logging.basicConfig(level=logging.INFO,
 # Load Environment Variables
 HOST = os.environ.get('HOST', 'http://localhost')
 PORT = os.environ.get('PORT', 8080)
-ROUTE_GENERATE = os.environ.get('PORT', 'generate')
+ROUTE_GENERATE = os.environ.get('ROUTE_GENERATE', 'generate')
 N_TOKENS = int(os.environ.get('N_TOKENS', 20))
 
 # This create a json file with the environment variables for javascript script
