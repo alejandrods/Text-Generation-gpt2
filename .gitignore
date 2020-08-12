@@ -2,5 +2,5 @@
 *.idea
 *.DS_Store
 *__pycache__
-./Models
-./gpt2
+/Models
+/gpt2
