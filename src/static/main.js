@@ -49,8 +49,12 @@ function onKeyDown(e) {
 
 // Colorize boxes
 function displayPrediction(textGenerated) {
-    generated = '<span style="font-weight: bold; color: #fda085;">' + textGenerated.generated + '</span>'
-    document.getElementById("prediction").innerHTML = textGenerated.query + generated
+    if (textGenerated.generated == "lang_det_err"){
+            document.getElementById("prediction").innerHTML = '<span style="font-weight: bold; color: #fda085;">Sorry, only supports english</span>'
+    } else {
+        generated = '<span style="font-weight: bold; color: #fda085;">' + textGenerated.generated + '</span>'
+        document.getElementById("prediction").innerHTML = textGenerated.query + generated
+    }
 }
 
 // Function to autogenerate

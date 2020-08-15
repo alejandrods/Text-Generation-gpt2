@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
 
-# https://medium.com/inside-machine-learning/what-is-a-transformer-d07dd1fbec04
-# https://medium.com/datadriveninvestor/deploy-machine-learning-model-in-google-cloud-using-cloud-run-6ced8ba52aac
-# https://medium.com/huggingface/distilbert-8cf3380435b5
 import os
 import json
 import flask
 import logging
+from textblob import TextBlob
 from generate import generate
 from flask_cors import CORS, cross_origin
 
@@ -63,8 +61,16 @@ def prediction():
 
     logging.info('Query received: {}'.format(income_query))
 
-    res = generate(income_query, size=N_TOKENS)
-    generated = res.split(income_query)[-1]
+    arg_lang = TextBlob(income_query)
+    lang = arg_lang.detect_language()
+    logging.info('Lang detected: {}'.format(lang))
+
+    if lang == 'en':
+        res = generate(income_query, size=N_TOKENS)
+        generated = res.split(income_query)[-1]
+    else:
+        res = "lang_det_err"
+        generated = "lang_det_err"
 
     logging.info('Result: {}'.format(res))
 

@@ -1,16 +1,15 @@
 # Dockerfile
-FROM python:3.6-slim-buster
+FROM python:3.6-slim-stretch
 
 WORKDIR /usr/app
 
 EXPOSE 8080
 
-ADD ./src/requirements.txt ./
-RUN pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
-RUN pip install -r requirements.txt
+COPY /src/requirements.txt /tmp/
+RUN pip install -r /tmp/requirements.txt
+RUN pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html && rm -rf /var/lib/apt/lists/*
 ADD ./src ./
-RUN python download.py
-#ADD ./src/gpt2 ./gpt2
+ADD ./src/distilgpt2 ./distilgpt2
 
 CMD ["python", "-u", "app.py"]
 

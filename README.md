@@ -1,7 +1,9 @@
 # Text Generator using GPT2 - Service Deployed on Google Cloud
 
-Using the [GPT2 model](https://huggingface.co/transformers/model_doc/gpt2.html) we can generate some awesome text. 
-The main objective of this project is to create a service using flask and docker and deploy it on Cloud Run.
+Using [GPT2 model](https://huggingface.co/transformers/model_doc/gpt2.html) we can generate some realistic and awesome text.
+The main objective of this project is to create a service for generating text using GPT2 model. We've built the application using flask and docker, the service is deployed on Cloud Run (GCP).
+
+Try it [HERE](https://text-generator-gpt2-app-6q7gvhilqq-lz.a.run.app/) :computer::bowtie:
 
 ## Table of Contents  
 
@@ -29,7 +31,9 @@ GPT-2 is a large transformer-based language model with 1.5 billion parameters, t
 git clone git@github.com:alejandrods/text-generation-gpt2.git
 ```
 
-2- Environment variables required - Check `.env` file
+2- Download model using `get_model.py`
+
+3- Set environment variables - Check `.env` file for env. variables required
 ```
 HOST (i.e: http://localhost)
 PORT (i.e: 8080)
@@ -37,23 +41,24 @@ ROUTE_GENERATE (Route for the application - i.e: generate)
 N_TOKENS (Number of words to be generated - i.e: 20)
 ```
 
-3- Build Image using Docker
+4- Build Image using Docker
 ```
 docker build --tag text-generator-gpt2 .
 ```
 
-4- Run Docker Image
+5- Run Docker Image
 ```
 docker run --name text-generator-gpt2 --env-file=.env -p 8080:8080 text-generator-gpt2
 ```
 
-5- Visit `http://localhost:8080`
+6- Visit `http://localhost:8080`
 
 
 >If you are not enable to run `Docker`, you can run the application using:
 >```
 >python src/app.py
 >```
+
 
 <a name="Examples"></a>
 ## Examples

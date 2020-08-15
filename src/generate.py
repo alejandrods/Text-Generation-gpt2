@@ -6,8 +6,9 @@ torch.set_grad_enabled(False)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Load tokenizer and model
-tokenizer = GPT2Tokenizer.from_pretrained("./gpt2")
-model = GPT2LMHeadModel.from_pretrained("./gpt2", pad_token_id=tokenizer.eos_token_id)
+tokenizer = GPT2Tokenizer.from_pretrained("./distilgpt2")
+model = GPT2LMHeadModel.from_pretrained("./distilgpt2", pad_token_id=tokenizer.eos_token_id)
+# model = GPT2LMHeadModel.from_pretrained("gpt2").eval()
 model = model.to(device)
 
 

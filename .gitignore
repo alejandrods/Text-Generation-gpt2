@@ -3,3 +3,4 @@
 *.DS_Store
 /Models/**
 /gpt2/**
+/distilgpt2/**
