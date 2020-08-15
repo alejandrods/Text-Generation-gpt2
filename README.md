@@ -1,7 +1,7 @@
 # Text Generator using GPT2 - Service Deployed on Google Cloud
 
 Using the [GPT-2 model](https://huggingface.co/transformers/model_doc/gpt2.html) we can generate some realistic and awesome text.
-The main objective of this project is to create a service for generating text using GPT-2 model. We've built the application using flask and docker, the service is deployed on Cloud Run (GCP).
+The main objective of this project is to create a service for generating text using GPT-2 model. I've built the application using flask and docker, the service is deployed on Cloud Run (GCP).
 
 Try it [HERE](https://text-generator-gpt2-app-6q7gvhilqq-lz.a.run.app/) :computer::bowtie:
 
