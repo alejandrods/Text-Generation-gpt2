@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
 torch.set_grad_enabled(False)
