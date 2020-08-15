@@ -65,5 +65,5 @@ docker run --name text-generator-gpt2 --env-file=.env -p 8080:8080 text-generato
 **INPUT:** Australia recorded its deadliest day of the coronavirus pandemic on Wednesday and the biggest daily rise in infections in three days, denting hopes that a second wave gripping the state of Victoria may be stabilising. 
 **GENERATED:** More people died at the hospital than in any week at the time of the pandemic – up from just six in 2013.
 
-**INPUT:** Australia recorded its deadliest day of the coronavirus pandemic on Wednesday and the biggest daily rise in infections in three days, denting hopes that a second wave gripping the state of Victoria may be stabilising. 
-**GENERATED:** More people died at the hospital than in any week at the time of the pandemic – up from just six in 2013.
+**INPUT:** While Japanese cuisine offers a wealth of gastronomic delights, with an endless variety of regional dishes, today she was cooking Ainu cuisine, the food of the indigenous people of Japan. That’s because,  
+**GENERATED:** at Ainu, the traditional food found in the city is usually made from fresh pork, which are...
