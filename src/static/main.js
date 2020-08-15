@@ -49,21 +49,12 @@ function onKeyDown(e) {
 
 // Colorize boxes
 function displayPrediction(textGenerated) {
-    if (textGenerated.generated == "lang_det_err"){
-            document.getElementById("prediction").innerHTML = '<span style="font-weight: bold; color: #fda085;">Sorry, only supports english</span>'
-    } else {
-        generated = '<span style="font-weight: bold; color: #fda085;">' + textGenerated.generated + '</span>'
-        document.getElementById("prediction").innerHTML = textGenerated.query + generated
-    }
+    // TODO
 }
 
 // Function to autogenerate
 function autoGenerate(){
-    var element = document.getElementById('prediction');
-    var text = element.innerText || element.textContent;
-
-    // Send to sendRequest
-    sendRequest(text)
+    // TODO
 }
 
 console.log(conf.APP_URL + conf.ROUTE)
@@ -74,30 +65,13 @@ function sendRequest(input) {
         // pass
     } else {
         // In case input no passed, we get the text from textarea
-        var input = document.getElementById("textarea").value.trim();
+        // TODO
     }
 
     if (input.length>1)
     {
-        // Build data json
-        var data = JSON.stringify({"input": input});
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === 4) {
-            var data = JSON.parse(this.responseText)
-                displayPrediction(data.body)
-            }
-        });
-
-        // Request prediction
-        xhr.open("POST", conf.APP_URL + conf.ROUTE);
-
-        xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.send(data);
+        // TODO
     }
-
 }
 
 document.getElementById("textarea").addEventListener("keydown", onKeyDown);
