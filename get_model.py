@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Downloads model(s) during docker build
+# Downloads model(s)
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
 GPT2LMHeadModel.from_pretrained('distilgpt2').save_pretrained('./src/distilgpt2')
