@@ -8,7 +8,6 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # Load tokenizer and model
 tokenizer = GPT2Tokenizer.from_pretrained("./distilgpt2")
 model = GPT2LMHeadModel.from_pretrained("./distilgpt2", pad_token_id=tokenizer.eos_token_id)
-# model = GPT2LMHeadModel.from_pretrained("gpt2").eval()
 model = model.to(device)
 
 
@@ -28,7 +27,6 @@ def generate(user_text, size=20):
     tokens = torch.tensor([tokens]).to(device)
 
     # Generate
-    # tokens = model.generate(tokens, max_length=size+tokens.shape[1], do_sample=True, top_k=50)
-    tokens = model.generate(tokens, max_length=size + tokens.shape[1], do_sample=True)
+    tokens = model.generate(tokens, max_length=size+tokens.shape[1], do_sample=True, top_k=50)
     tokens = tokens[0].tolist()
     return tokenizer.decode(tokens, skip_special_tokens=True)
