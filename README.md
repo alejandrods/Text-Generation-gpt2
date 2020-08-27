@@ -1,9 +1,11 @@
 # Text Generator using GPT2 - Service Deployed on Google Cloud
 
-Using [GPT2 model](https://huggingface.co/transformers/model_doc/gpt2.html) we can generate some realistic and awesome text.
-The main objective of this project is to create a service for generating text using GPT2 model. We've built the application using flask and docker, the service is deployed on Cloud Run (GCP).
+Using the [GPT-2 model](https://huggingface.co/transformers/model_doc/gpt2.html) we can generate some realistic and awesome text.
+The main objective of this project is to create a service for generating text using GPT-2 model. I've built the application using flask and docker, the service is deployed on Cloud Run (GCP).
 
 Try it [HERE](https://text-generator-gpt2-app-6q7gvhilqq-lz.a.run.app/) :computer::bowtie:
+
+<center><img src="https://github.com/alejandrods/text-generation-gpt2/blob/master/images/ex1.png" width="550"></center>
 
 ## Table of Contents  
 
@@ -65,5 +67,5 @@ docker run --name text-generator-gpt2 --env-file=.env -p 8080:8080 text-generato
 **INPUT:** Australia recorded its deadliest day of the coronavirus pandemic on Wednesday and the biggest daily rise in infections in three days, denting hopes that a second wave gripping the state of Victoria may be stabilising. 
 **GENERATED:** More people died at the hospital than in any week at the time of the pandemic – up from just six in 2013.
 
-**INPUT:** Australia recorded its deadliest day of the coronavirus pandemic on Wednesday and the biggest daily rise in infections in three days, denting hopes that a second wave gripping the state of Victoria may be stabilising. 
-**GENERATED:** More people died at the hospital than in any week at the time of the pandemic – up from just six in 2013.
+**INPUT:** While Japanese cuisine offers a wealth of gastronomic delights, with an endless variety of regional dishes, today she was cooking Ainu cuisine, the food of the indigenous people of Japan. That’s because,  
+**GENERATED:** at Ainu, the traditional food found in the city is usually made from fresh pork, which are...
