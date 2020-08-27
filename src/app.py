@@ -7,7 +7,7 @@ def index():
 
     :return:
     """
-
+    # TODO
     pass
 
 
@@ -17,7 +17,7 @@ def prediction():
 
     :return: Generated text
     """
-
+    # TODO
     pass
 
 
@@ -27,5 +27,5 @@ def health_check():
 
     :return:
     """
-
+    # TODO
     pass
