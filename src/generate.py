@@ -2,6 +2,7 @@
 
 import torch
 from transformers import GPT2Tokenizer, GPT2LMHeadModel
+# Disable gradient calculation - Useful for inference
 torch.set_grad_enabled(False)
 
 # Check if gpu or cpu
@@ -29,6 +30,7 @@ def generate(user_text, size=20):
     tokens = torch.tensor([tokens]).to(device)
 
     # Generate
+    # max_length = context_length + output_length
     tokens = model.generate(tokens, max_length=size+tokens.shape[1], do_sample=True, top_k=50)
     tokens = tokens[0].tolist()
     return tokenizer.decode(tokens, skip_special_tokens=True)
