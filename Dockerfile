@@ -9,7 +9,6 @@ COPY /src/requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 RUN pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html && rm -rf /var/lib/apt/lists/*
 ADD ./src ./
-ADD ./src/distilgpt2 ./distilgpt2
 
 CMD ["python", "-u", "app.py"]
 
