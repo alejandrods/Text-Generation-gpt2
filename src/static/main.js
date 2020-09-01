@@ -49,12 +49,21 @@ function onKeyDown(e) {
 
 // Colorize boxes
 function displayPrediction(textGenerated) {
-    // TODO
+    if (textGenerated.generated == "lang_det_err"){
+            document.getElementById("prediction").innerHTML = '<span style="font-weight: bold; color: #fda085;">Sorry, only supports english</span>'
+    } else {
+        generated = '<span style="font-weight: bold; color: #fda085;">' + textGenerated.generated + '</span>'
+        document.getElementById("prediction").innerHTML = textGenerated.query + generated
+    }
 }
 
 // Function to autogenerate
 function autoGenerate(){
-    // TODO
+    var element = document.getElementById('prediction');
+    var text = element.innerText || element.textContent;
+
+    // Send to sendRequest
+    sendRequest(text)
 }
 
 console.log(conf.APP_URL + conf.ROUTE)
@@ -65,7 +74,7 @@ function sendRequest(input) {
         // pass
     } else {
         // In case input no passed, we get the text from textarea
-        // TODO
+        var input = document.getElementById("textarea").value.trim();
     }
 
     if (input.length>1)
