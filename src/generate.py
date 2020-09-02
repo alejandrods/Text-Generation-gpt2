@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import torch
-from transformers import GPT2Tokenizer, GPT2LMHeadModel
+# from transformers import GPT2Tokenizer, GPT2LMHeadModel
+from transformers import AutoTokenizer, AutoModelWithLMHead
 # Disable gradient calculation - Useful for inference
 torch.set_grad_enabled(False)
 
@@ -9,8 +10,8 @@ torch.set_grad_enabled(False)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Load tokenizer and model
-tokenizer = GPT2Tokenizer.from_pretrained("./distilgpt2")
-model = GPT2LMHeadModel.from_pretrained("./distilgpt2", pad_token_id=tokenizer.eos_token_id)
+tokenizer = AutoTokenizer.from_pretrained("./distilgpt2")
+model = AutoModelWithLMHead.from_pretrained("./distilgpt2")
 model = model.to(device)
 
 
