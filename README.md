@@ -5,6 +5,8 @@ The main objective of this project is to create a service for generating text us
 
 Try it [HERE](https://text-generator-gpt2-app-6q7gvhilqq-lz.a.run.app/) :computer::bowtie:
 
+I imparted a webinar about how we can build this service, you can watch [here](https://www.youtube.com/watch?v=C_4-LGv7qXg&feature=youtu.be&utm_content=138887965&utm_medium=social&utm_source=linkedin&hss_channel=lcp-27008875)
+
 <center><img src="https://github.com/alejandrods/text-generation-gpt2/blob/master/images/ex1.png" width="550"></center>
 
 ## Table of Contents  
