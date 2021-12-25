@@ -1,13 +1,12 @@
-# GPT-3 EleutherAI
-from transformers import AutoTokenizer, AutoModelForCausalLM
+# -*- coding: utf-8 -*-
 
-tokenizer = AutoTokenizer.from_pretrained(
-    "EleutherAI/gpt-neo-1.3B").save_pretrained('./src/gpt-neo')
-model = AutoModelForCausalLM.from_pretrained(
-    "EleutherAI/gpt-neo-1.3B").save_pretrained('./src/gpt-neo')
+# Downloads model(s)
+# from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-# GPT-2
-# from transformers import AutoTokenizer, AutoModelWithLMHead
-#
-# AutoTokenizer.from_pretrained('gpt2').save_pretrained('./gpt2-xl')
-# AutoModelWithLMHead.from_pretrained('gpt2').save_pretrained('./gpt2-xl')
+# GPT2LMHeadModel.from_pretrained('distilgpt2').save_pretrained('./src/distilgpt2')
+# GPT2Tokenizer.from_pretrained('distilgpt2').save_pretrained('./src/distilgpt2')
+
+from transformers import AutoTokenizer, AutoModelWithLMHead
+
+AutoTokenizer.from_pretrained('gpt2').save_pretrained('./gpt2-xl')
+AutoModelWithLMHead.from_pretrained('gpt2').save_pretrained('./gpt2-xl')

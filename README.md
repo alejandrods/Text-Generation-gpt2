@@ -1,9 +1,7 @@
-# Text Generator using GPT3 - Service Deployed on Google Cloud
+# Text Generator using GPT2 - Service Deployed on Google Cloud
 
-A previous version of this code was done using the [GPT-2 model](https://huggingface.co/transformers/model_doc/gpt2.html)
-
-Using the [GPT-3 model](https://huggingface.co/EleutherAI/gpt-neo-1.3B) we can generate some realistic and awesome text.
-The main objective of this project is to create a service for generating text using a replication of the GPT-3 architecture. I've built the application using flask and docker, the service is deployed on Cloud Run (GCP).
+Using the [GPT-2 model](https://huggingface.co/transformers/model_doc/gpt2.html) we can generate some realistic and awesome text.
+The main objective of this project is to create a service for generating text using GPT-2 model. I've built the application using flask and docker, the service is deployed on Cloud Run (GCP).
 
 Try it [HERE](https://text-generator-gpt2-app-6q7gvhilqq-lz.a.run.app/) :computer::bowtie:
 
@@ -13,16 +11,14 @@ I imparted a webinar about how we can build this service, you can watch it [here
 
 ## Table of Contents  
 
-[GPT-2 and GPT-3](#gpt2)
+[GPT-2](#gpt2)
 
 [Running the App](#Deploy)  
 
 [Examples](#Examples)  
 
 <a name="gpt2"></a>
-## GPT-2 and GPT-3
-I started developing this project using the GPT-2 model but I have updated it using a EleutherAI's replication of the GPT-3 architecture.
-
+## GPT-2
 GPT-2 is a large transformer-based language model with 1.5 billion parameters, trained on a dataset of 8 million web pages. GPT-2 is trained with a simple objective: predict the next word, given all of the previous words within some text. The diversity of the dataset causes this simple goal to contain naturally occurring demonstrations of many tasks across diverse domains. GPT-2 is a direct scale-up of GPT, with more than 10X the parameters and trained on more than 10X the amount of data.
 
 - GPT-2 is a model with absolute position embeddings so it’s usually advised to pad the inputs on the right rather than the left.
@@ -30,9 +26,6 @@ GPT-2 is a large transformer-based language model with 1.5 billion parameters, t
 - GPT-2 was trained with a causal language modeling (CLM) objective and is therefore powerful at predicting the next token in a sequence. Leveraging this feature allows GPT-2 to generate syntactically coherent text as it can be observed in the run_generation.py example script.
 
 - The PyTorch models can take the past as input, which is the previously computed key/value attention pairs. Using this past value prevents the model from re-computing pre-computed values in the context of text generation. See reusing the past in generative models for more information on the usage of this argument.
-
-_Update:_
-GPT-Neo 1.3B was trained on the Pile for 380 billion tokens over 362,000 steps. It was trained as a masked autoregressive language model, using cross-entropy loss.
 
 <a name="Deploy"></a>
 ## Running the App
@@ -59,7 +52,7 @@ docker build --tag text-generator-gpt2 .
 
 If you are using Apple M1 Chip:
 ```
-docker buildx build --platform linux/amd64 -t text-generator-gpt2 .   
+docker buildx build --platform linux/amd64 -t cover-letter-generator-gpt2 .   
 ```
 
 5- Run Docker Image

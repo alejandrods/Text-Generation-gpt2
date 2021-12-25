@@ -24,4 +24,5 @@ RUN pip install -r /tmp/requirements.txt
 RUN pip install torch==1.10.1+cpu torchvision==0.11.2+cpu torchaudio==0.10.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
 ADD ./src ./
 
+#CMD ["python", "-u", "app.py"]
 CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app
