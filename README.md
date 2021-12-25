@@ -21,7 +21,7 @@ I imparted a webinar about how we can build this service, you can watch it [here
 
 <a name="gpt2"></a>
 ## GPT-2 and GPT-3
-I started developing this project using the GPT-2 model but I have updated it using a EleutherAI's replication of the GPT-3 architecture.
+I started developing this project using the GPT-2 model but I have updated it using EleutherAI's replication of the GPT-3 architecture.
 
 GPT-2 is a large transformer-based language model with 1.5 billion parameters, trained on a dataset of 8 million web pages. GPT-2 is trained with a simple objective: predict the next word, given all of the previous words within some text. The diversity of the dataset causes this simple goal to contain naturally occurring demonstrations of many tasks across diverse domains. GPT-2 is a direct scale-up of GPT, with more than 10X the parameters and trained on more than 10X the amount of data.
 
