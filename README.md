@@ -50,6 +50,11 @@ N_TOKENS (Number of words to be generated - i.e: 20)
 docker build --tag text-generator-gpt2 .
 ```
 
+If you are using Apple M1 Chip:
+```
+docker buildx build --platform linux/amd64 -t cover-letter-generator-gpt2 .   
+```
+
 5- Run Docker Image
 ```
 docker run --name text-generator-gpt2 --env-file=.env -p 8080:8080 text-generator-gpt2
